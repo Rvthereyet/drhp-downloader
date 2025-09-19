@@ -1,0 +1,29 @@
+name: Download SEBI DRHPs and Upload to Drive
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          pip install -r requirements.txt
+
+      - name: Add service account key
+        run: |
+          echo "${{ secrets.SERVICE_ACCOUNT_JSON }}" > service_account.json
+
+      - name: Run downloader
+        run: |
+          python download_drhp.py
