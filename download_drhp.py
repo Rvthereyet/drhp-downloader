@@ -19,7 +19,7 @@ HEADERS = {"User-Agent": "drhp-downloader/1.0"}
 KEYWORDS = ["draft", "drhp", "red-herring", "red herring", "offer document"]
 
 # Google Drive
-FOLDER_ID = "YOUR_GOOGLE_DRIVE_FOLDER_ID"  # 🔴 replace with your folder ID
+FOLDER_ID = "1M1gSAjvKEj5o2_kViO-4mPgrqjSL9Sf_"  # 🔴 replace with your folder ID
 SERVICE_ACCOUNT_FILE = "service_account.json"  # 🔴 place JSON key in repo
 
 os.makedirs(OUT_DIR, exist_ok=True)
